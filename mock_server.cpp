@@ -7,7 +7,7 @@ int main() {
 
     net::TcpServer server;
     server.start();
-    server.acceptConnection();
+    cout << server.acceptConnection() << endl;
 
     return 0;
 }
