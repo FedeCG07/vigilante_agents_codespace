@@ -10,6 +10,7 @@ find_package(Threads REQUIRED)
 
 # Source files
 set(COMMON_SOURCES
+  common/messages.cpp
   common/tcp_connection.cpp
   common/rpc_protocol.cpp
 )
@@ -28,7 +29,6 @@ target_link_libraries(
   agent
   Threads::Threads
 )
-
 
 
 add_executable(
