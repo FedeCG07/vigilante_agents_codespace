@@ -24,10 +24,10 @@ string decideMove(const string state, const string intel, const string id) {
             me = agent;
         }
     }
-    
+/*     
     if (!game_state.bases.empty()) {
         if (game_state.bases[0].team != me.team and ) {
             
         }
-    }
+    } */
 }
