@@ -1,6 +1,7 @@
 #include "common/tcp_connection.h"
 #include "common/rpc_protocol.h"
 #include "common/messages.h"
+#include "logic/logic.h"
 #include <iostream>
 
 using namespace std;
@@ -32,7 +33,9 @@ int main(int argc, char* argv[]) {
         string id = rpc::extractStringValue(instruction, "id");
         string type = rpc::extractStringValue(instruction, "type");
         if (type == "play_turn") {
-            string turn_message = turn_response(id, "move north");
+            string state = rpc::extractStringValue(instruction, "state");
+            string action = decideMove(state, intel, id);
+            string turn_message = turn_response(id, action);
             connection.sendMessage(turn_message);
         } else if (type == "receive_intel") {
             intel = rpc::extractStringValue(instruction, "intel");
