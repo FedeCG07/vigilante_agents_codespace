@@ -13,6 +13,7 @@ set(COMMON_SOURCES
   common/messages.cpp
   common/tcp_connection.cpp
   common/rpc_protocol.cpp
+  logic/logic.cpp
 )
 
 add_executable(
